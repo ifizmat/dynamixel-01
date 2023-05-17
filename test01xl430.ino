@@ -1,3 +1,12 @@
+/* Controller by Applied Robotics: AR-IoT-DXL
+ * Servo by Robotis, South Korea: Dynamixel XL430-W250-T
+ * Lib: DxlMaster, Dynamixel Protocol 1.0
+ * Software: 
+ * https://appliedrobotics.ru/?page_id=633
+ * Download DxlMaster_19.04.2019.zip
+ * https://disk.yandex.ru/d/uftscsAynS-pEg
+ */
+
 #include <DxlMaster.h>
 #include <Dynamixel.h>
 #include <DynamixelConsole.h>
@@ -57,7 +66,10 @@ void setup() {
   delay(50);  
   printData(ID_MOTOR, 112, "Profile Velocity", 4);
   motor.write(116, uint32_t(2048));
-  delay(50);  
+  delay(4000);  
+  printData(ID_MOTOR, 116, "Goal Position", 4);
+  motor.write(116, uint32_t(0));
+  delay(4000);  
   printData(ID_MOTOR, 116, "Goal Position", 4);
   //baudrateReaded = motor.read(BAUDRATE_ADDRESS);
   //Serial.println(String("Baud rate: ") + idReaded);
